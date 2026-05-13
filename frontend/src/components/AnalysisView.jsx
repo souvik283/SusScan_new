@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import axios from "axios";
 
@@ -14,19 +14,28 @@ import {
 
 export default function AnalysisView() {
  
-  const fetchdata = async () => {
-    const response = await fetch(
-          `${"https://botanical-famished-stillness.ngrok-free.dev/"}`,
-          {
-            method: "GET",
-            // headers: { "Content-Type": "application/json" },
-            // body: JSON.stringify({ input: "you are accecpected. come to dubai .alhabibi" }),
-          },
-        );
-    console.log(response);
+ const fetchdata = async () => {
+    try {
+      const response = await fetch(
+        "https://botanical-famished-stillness.ngrok-free.dev/",
+        {
+          method: "GET",
+        }
+      );
+
+      const data = await response.json();
+
+      console.log(data);
+
+    } catch (error) {
+      console.log("Error:", error);
+    }
   };
 
-  fetchdata()
+  
+  useEffect(() => {
+    fetchdata();
+  }, []);
 
   const [object, setObject] = useState("file");
   const [showPopup, setShowPopup] = useState(false);

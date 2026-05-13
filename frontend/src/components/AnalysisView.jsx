@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
-import axios from "axios";
+// import axios from "axios";
 
 import {
   UploadCloud,
@@ -92,23 +92,6 @@ export default function AnalysisView() {
               </div>
             </div>
 
-            {/* <div
-            style={{
-              display: object=="file" ? "block" : "none"
-            }}
-             className="border-2 border-dashed border-white/10 rounded-2xl p-16 flex flex-col items-center justify-center gap-6 hover:border-brand-lime/50 hover:bg-brand-lime/5 transition-all cursor-pointer group">
-              <div className="w-20 h-20 rounded-full bg-brand-lime/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                <UploadCloud className="text-brand-lime" size={32} />
-              </div>
-              <div className="text-center">
-                <p className="font-display text-xl font-bold text-brand-lime mb-2">
-                  Drop malicious assets here
-                </p>
-                <p className="text-white/40 text-sm">
-                  Supports images, documents, and code fragments
-                </p>
-              </div>
-            </div> */}
 
             <div
               onClick={() => setShowPopup(true)}

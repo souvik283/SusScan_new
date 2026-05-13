@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "motion/react";
+import axios from "axios";
 
 import {
   UploadCloud,
@@ -9,9 +10,19 @@ import {
   Clock,
   Globe,
 } from "lucide-react";
-import { style } from "motion/react-client";
+// import { style } from "motion/react-client";
 
 export default function AnalysisView() {
+ 
+  const fetchdata = async () => {
+    const response = await axios.get(
+      `https://botanical-famished-stillness.ngrok-free.dev/`,
+    );
+    console.log(response.data);
+  };
+
+  fetchdata()
+
   const [object, setObject] = useState("file");
   const [showPopup, setShowPopup] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
@@ -207,8 +218,8 @@ export default function AnalysisView() {
                     r="110"
                     fill="transparent"
                     stroke="currentColor"
-                    strokeDasharray="691"
-                    strokeDashoffset="150"
+                    strokeDasharray="700"
+                    strokeDashoffset="100"
                     strokeLinecap="round"
                     strokeWidth="12"
                   />

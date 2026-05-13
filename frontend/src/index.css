@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@theme {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-brand-lime: #d2f000;
+  --color-brand-purple: #74009f;
+  --color-brand-red: #ff003c;
+  --color-brand-obsidian: #131313;
+  --color-brand-surface: #1e1e1e;
+
+  --radius-xl: 0.75rem;
+  --radius-2xl: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-obsidian text-[#e5e2e1] font-sans selection:bg-brand-lime selection:text-brand-obsidian;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(20, 20, 20, 0.6);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .neon-glow-lime {
+    box-shadow: 0px 0px 20px rgba(210, 240, 0, 0.2);
+  }
+
+  .neon-glow-red {
+    box-shadow: 0px 0px 20px rgba(255, 0, 60, 0.3);
+  }
+
+  .text-shadow-neon {
+    text-shadow: 0 0 10px rgba(210, 240, 0, 0.5);
+  }
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(210, 240, 0, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(210, 240, 0, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(210, 240, 0, 0); }
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s infinite;
+}
+
+@keyframes infinite-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-infinite-scroll {
+  animation: infinite-scroll 40s linear infinite;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #353534;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #454932;
+}

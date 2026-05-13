@@ -17,7 +17,7 @@ export default function AnalysisView() {
  const fetchdata = async () => {
     try {
       const response = await fetch(
-        "https://botanical-famished-stillness.ngrok-free.dev/",
+        "https://campusguard-backend.onrender.com",
         {
           method: "GET",
         }

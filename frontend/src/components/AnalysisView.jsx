@@ -16,11 +16,11 @@ export default function AnalysisView() {
  
   const fetchdata = async () => {
     const response = await fetch(
-          `${"https://botanical-famished-stillness.ngrok-free.dev/"}`,
+          `${"https://botanical-famished-stillness.ngrok-free.dev/verify"}`,
           {
-            method: "GET",
+            method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ }),
+            body: JSON.stringify({ input: "you are accecpected. come to dubai .alhabibi" }),
           },
         );
     console.log(response);

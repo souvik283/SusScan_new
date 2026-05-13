@@ -15,10 +15,15 @@ import {
 export default function AnalysisView() {
  
   const fetchdata = async () => {
-    const response = await axios.get(
-      `https://botanical-famished-stillness.ngrok-free.dev/`,
-    );
-    console.log(response.data);
+    const response = await fetch(
+          `${"https://botanical-famished-stillness.ngrok-free.dev/"}`,
+          {
+            method: "GET",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ }),
+          },
+        );
+    console.log(response);
   };
 
   fetchdata()
